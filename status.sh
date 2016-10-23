@@ -1,4 +1,6 @@
 for FOLDER in Buzatu*; do
     echo $FOLDER
-    svn status $FOLDER
+    cd $FOLDER
+    git status
+    cd ..
 done

@@ -1,4 +1,6 @@
 for FOLDER in Buzatu*; do
     echo $FOLDER
-    svn update $FOLDER
+    cd $FOLDER
+    git pull origin master
+    cd ..
 done

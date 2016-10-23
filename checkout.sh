@@ -35,9 +35,11 @@ else
     PACKAGETAG=${VALUE}
 fi
 echo "${PACKAGE} Tag=${PACKAGETAG}"
-COMMAND="svn co ${SVNUSR}/${PACKAGE}/${PACKAGETAG} ${PACKAGE}"
-echo ${COMMAND}
+#COMMAND="svn co ${SVNUSR}/${PACKAGE}/${PACKAGETAG} ${PACKAGE}"
+# only for trunk in Git for now
+COMMAND="git clone ssh://git@gitlab.cern.ch:7999/abuzatu/${PACKAGE}.git"
+echo "COMMAND (only for trunk for now)=${COMMAND}"
 if [ $checkout = 1 ]; then
-    `echo ${COMMAND}`
+    ${COMMAND}
 fi
 done
