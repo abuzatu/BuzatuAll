@@ -1,0 +1,15 @@
+info from: http://aperiodic.net/screen/quick_reference
+start a new screen session with session name: screen -S <name>
+attach to a running session: screen -r
+attach to a running session with a name: screen -r <name>
+detach: C-a d
+detach and logout (quick exit): C-a D D
+create new window: C-a c
+change to last-visited active window (commonly used to flip-flop between two windows): C-a C-a
+change to window by number: C-a <number> (only for windows 0 to 9) 
+
+info from: http://stackoverflow.com/questions/1509677/kill-detached-screen-session
+to kill a screen window:
+screen -X -S [session # you want to kill] kill
+where [session # you want to kill] can be gotten from
+screen -ls

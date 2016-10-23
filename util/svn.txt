@@ -1,0 +1,23 @@
+Command Line svn:ignore a file:
+svn propedit svn:ignore .
+taken from:
+http://blog.bogojoker.com/2008/07/command-line-svnignore-a-file/
+
+Command Line to change a file to executable without having to remove it first, for example
+svn propset svn:executable on file.sh
+
+To check out:
+svn co ${SVNUSR}/BuzatuAll/trunk
+svn co ${SVNUSR}/BuzatuAll/tags/WH-00-00-01
+
+to browser the code of this project
+https://svnweb.cern.ch/trac/atlas-abuzatu/browser/BuzatuAll
+
+to browse the code of my old project:
+https://svnweb.cern.ch/trac/atlas-abuzatu/browser/abuzatu/Resolution/ResolutionNN/trunk
+
+instructions to run this package:
+https://twiki.cern.ch/twiki/bin/view/Sandbox/AdrianWH
+
+generic SVN instructions on my Twiki:
+https://twiki.cern.ch/twiki/bin/view/Sandbox/AdrianBuzatuJERSVN
