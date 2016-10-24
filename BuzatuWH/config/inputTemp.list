@@ -1,9 +1,0 @@
-#Process File Tree MaxNrEvents
-#lvbb125 Signal WlvH125 0
-#DataMu Muon data 0
-#DataEl Electron data 0
-#TTbar TTbar top 0
-Wll WJets Wll 0
-#Wbb WJets Wbb 0
-#important to have something on the last line
-#otherwise the last process is not read
