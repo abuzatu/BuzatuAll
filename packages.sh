@@ -16,8 +16,8 @@ ARRAY_PACKAGE=(
 
 "BuzatuRivetHbbBFatJet:tags/RivetHbbBFatJet-00-00-01"
 "BuzatuRivetHbbBJets:tags/RivetHbbBJets-00-00-18"
-"BuzatuNoteATLASTemplate:tags/NoteTemplateAtlas-00-00-01"
 
+"BuzatuNoteATLASTemplate:tags/NoteTemplateAtlas-00-00-01"
 "BuzatuNoteWH:tags/NoteWH-00-00-19"
 "BuzatuNoteWHAppendix:tags/NoteWHAppendix-00-00-02"
 "BuzatuNoteBJetEnergyCorrectionsRunII:tags/NoteBJetEnergyCorrectionsRunII-00-00-01"
