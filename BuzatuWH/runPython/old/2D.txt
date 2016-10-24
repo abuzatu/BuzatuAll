@@ -1,0 +1,51 @@
+def createTwoD(l_histo, xValue, yValue, vMarker, vMarkerSize, vColour):
+
+    '''Objective:
+         * Create a 2D plot using an x and y value
+         * Return the plot
+    '''
+
+    ## Splitting the histo list
+    h_st, location, c_x, c_y, xMin, xMax, yMin, yMax, nBins = l_histo
+
+    ## Define the 2D plot
+    h_2d = TH2D('h_2d','', int(nBins), float(xMin), float(xMax), 
+                 int(nBins), float(yMin), float(yMax))
+    h_2d.Fill(float(xValue), float(yValue))
+    h_2d.SetMarkerStyle(vMarker)
+    if vMarkerSize != -1:
+        h_2d.SetMarkerSize(vMarkerSize)
+    h_2d.SetMarkerColor(vColour)
+    h_2d.SetDirectory(0)
+
+    return h_2d
+
+
+def overlayTwoD(l_plots, t_legend, l_histo, l_legend, l_text,
+                l_axis, saveDir, l_saveAs):
+
+    ## De-list the list objects:
+    a_str, xLabel, yLabel, xOffset, yOffset, a_labelSize, a_textSize = l_axis
+    h_str, h_location, c_x, c_y, xMin, xMax, yMin, yMax, nBins = l_histo
+    l_str, l_x1, l_y1, l_x2, l_y2, l_textSize = l_legend
+    t_str, plotText, t_textSize, t_alignment, t_start, t_gap, t_x = l_text
+
+    ## Setup the canvas
+    gROOT.SetBatch(1)
+    c = TCanvas('c', 'c', int(c_x), int(c_y))
+    gStyle.SetOptStat(0)
+    c.SetGrid(1,1)
+    c.SetTicks(1,1)
+    c.Update()
+
+    for i in xrange(len(l_plots)):
+        if i == 0:
+            l_plots[i].Draw()
+            setupAxes(l_plots[i], xLabel, yLabel, xOffset, yOffset,
+                      a_textSize, xMin, xMax, 1)
+        else:
+            l_plots[i].Draw('SAME p')
+
+    setupLegend(t_legend, l_x1, l_y1, l_x2, l_y2, l_textSize)
+    setupTextOnPlot(plotText, t_textSize, t_alignment, t_x, t_start, t_gap)
+    savePlots(c, saveDir + h_str, l_saveAs) 

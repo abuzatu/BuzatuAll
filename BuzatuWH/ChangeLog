@@ -1,0 +1,123 @@
+Adrian Buzatu (adrian.buzatu@glasgow.ac.uk)
+19 Sept 2014
+
+Tag 00-00-01:
+Moved here as part of a package developed for the past 1.5 years
+This has the code to actually run the analysis, either locally or on the batch in Glasgow. I want BuzatuTree to be a generic package, but the configuration files on what to run to be controlled by a different package, especially since different users need different configurations.
+
+Tag 00-00-02:
+o Updated the run scripts so that we can run either locally or on the batch from the script, and the logs and the outputs go to different folders, for comparison when testing or simply not to overwrite as we may want to run for all processes on the batch but also keep working on one process locally
+o Used for running on 22 Sept 1 am
+
+Tag 00-00-03:
+o Adding runPython folder, with scripts that run Python 
+
+Tag 00-00-04:
+o Updated to allow for different file, tree and process name
+
+Tag 00-00-05:
+o works with BuzatuTree-00-00-15, added input files with the processes and the number of events to run on and the trees to produce
+	
+Tag 00-00-06:
+o added runReadPaul.sh to run alone so that we keep only the names of the processes, the idea is to run for all processes and only later on to runEvent alone, without having to remember the conditions of the readPaul.sh, but assuming they all have the same conditions and given by the name of the folder. Works with BuzatuTree-00-00-16
+
+Tag 00-00-07:
+o added runEventPaul.sh and removed old runReadPaulReadEvent.sh. Now we run the two as different things. Most of the code is the same, so in the future it would be nice to recombine it again, maybe in Python, as only what we run is different, but most of the things are the same. Now it is a bit of duplicate code. But for functionality it is good to run just the readPaul, then just the readEvent, as I can run readEvent several times with many things changed, like subsequently tighter event cuts, or different trees, etc. 
+o added the MJ files and script to run the MJ files for Tom. That means running only the small tree to which we added MET, for all the bTag categories and all the lepton types. 
+
+Tag 00-00-08:
+o added runCompareTrees.sh to compare easily the jet vector between the trees small, perjet and perevent, used for validating the trees. 
+o tagged on 2014/10/21
+
+Tag 00-00-09:
+o created filelists for WithMJ and have on readPaul cut at TruthAll+2TMBTag and for readEvent a cut at All. And run on all events and all processes without MJ. 
+o tagged on 2014/10/21	
+	
+Tag 00-00-10:
+o inputPaulTest, inputPaulWithMJ, inputPaulMinimum.
+	
+Tag 00-00-11:
+o Change names to take into account that there is no more readPaul, readEvent, but only read
+
+Tag 00-00-12:
+o Added new.sh, tar.sh, improved clean.sh to remove *~ fron all folders.
+o Added run.sh in runPython, and removed everything from plots to be shown in svn
+
+Tag 00-00-13:
+o Scripts used in the results for version 1.0 of the note.
+
+Tag 00-00-14:
+o First addition of the NN training.
+
+Tag 00-00-15:
+o Reorganised NN training, now working per event and per jet.
+o Added writing_smearingMatrix.C, a macro from Phil. In the future it should be made an executable. 
+o Improved histogram making by overlapping corrections for a certain process.
+o Tagged on Feb 05
+
+TAg 00-00-16
+o Added runPython/runOverlayHistogramsMbb2.py
+o Tag 16 Feb 15
+
+Tag 00-00-17
+o On March 14, I added the ability to run the create histograms on batch, so that it is quick and in parallal. 
+o On March 14, I added the ability to compute the sensitivity and significance based on our histograms. 
+o On March 18-19 I created histograms first and from them everything.
+0 Tagged on Mar 20
+	
+Tag 00-00-18
+o On March 20, modified runCreateHistogram to create in one run all those of (El,Mu)x(PtVbins). That speeds it up considerably. 
+o By March 26, I have added to mergeHistograms with the background summed up as we want; to make latex table yields for a given variable with a desired rebinning for a given correction; to makek latex table for sensitivity/significance/signaloverbackground for a a given variable and binning and for all the corrections listed in the table; also added the category all for leptons and all for PtV inclusive. 
+o March 27 added overlayHistogram, which had been done in the previous code (for a given process, overlay the Mbb of different corrections).
+o March 27 added fitHistogram, which had been done in the previous code (for a given process, put in a latex table the Mbb peak and width of different corrections)
+o On March 30 Tag 18, for the CERN Hbb talk
+
+Tag 00-00-19
+o On March 30, j1 Pt, j2Pt were added, as well as the response for mbb, j1Pt and j2Pt. Response means dividing each correction to the GENWZ correction. If there is no such correction, the variablehas a value of zero, and the division is zero. 
+o On March 31, plots for the response of Mbb were added. 
+o Tagged on March 31 as shown in the Hbb meeting on April 01. 
+
+Tag 00-00-20
+o 03 April: createHistogramPerJet, similar to createHistogram (which implies per event), and also added "f", the correction factor, which is truth/reco, whereas response "r" is reco/truth. 
+o Added createHistogramPerJetPtReco. This implies having histograms for every bin of Pt. So I want to reform my code to do the same for bins of lep, bins of Pt, bins of any quantity, and so on. I want a generic code. So I tag it now so that I can change easily.
+o Tagged on 03 April
+
+Tag 00-00-21
+o I added the feature to put as many criteria to divide into bins as desired. So now we can have Lep, PtV, and many jetPt bins for each PtReco bin. 
+o Tagged on 03 April, PtReco works.
+
+Tag 00-00-22
+o Updated the createHistogram to do per event or per jet (per jet also does PtReco histograms).
+o added createPtReco based on the histograms created.
+o 06 April I added createHistogramPtRecoOrResponse. Next is to overlay them in different ways we want, and plot individually. Added the overlay too.
+o Tag on 06 April, as for the presentation I prepared.
+
+Tag 00-00-23:
+o 06 May 2015, I added checks if a ROOT file exists, and from it a tree or a histogram exist. The old exists() method did not work.
+o On 07 May 2015 I replace "exit()" with "assert(False)" everywhere, so that we know when it crashes also the line and the file where this is done. It helps dramatically with debugging. 
+o Made mergeHistogram and computeSignificance work again, they were failing due to the improvement in the list of categories, but had not been updated here.
+o Tagged on 16 Oct 2015
+
+Tag 00-00-24:
+o Moved createPtReco from BuzatuReadCxAOD to here
+o Add createMbb
+o Added more scripts and features to make the talk on 151127
+	
+Tag 00-00-25:
+o March 21 and before, updated code for OverlapRemoval studies.
+o March 25: added stat error band in ratio plot for Overlap Removal studies.
+o April 06: add eta studies for jet Pt and Mbb.
+o April 07: added ICHEP2016 folder with createHistogramVariableMultipleBins.py. That way in an automated way I can divide the phase space based on many type of bins I want. I fill any histograms I want. Including bins that overlap, such as one bin and then inclusive. Once I have the histograms, I can do response studies, derive PtReco, do anything I want easily with overlayHistogram.
+o April 07: Added skeletonPython.py.
+o April 08-10: Refactor code for the concatenation when dealing with any number of bins. Redone the initial .root files with the new code. Now also has if jet is leading, or subleading, or inclusive. Also create the same bins for hadronic, muon, as adding the decay as any of the cuts. The idea is to add histograms from the bin I want laters, so that I can try different binnings easily.
+..... [many many changes since]
+
+Tag 00-00-27:
+o Oct 07 2016: Updated code to create mbb histograms and overlay for the first look at AZH. 
+o Tagged on Oct 07 2016.
+
+Tag 00-00-28:
+Oct 20,last version inSVN, first version in GitLab.
+
+Tag 00-00-29:
+o [in progress]
