@@ -1,4 +1,6 @@
+.DS_Store
 *~
+*.tgz
 BuzatuATLAS
 BuzatuPython
 BuzatuBash
@@ -17,4 +19,3 @@ BuzatuCV
 BuzatuResearch
 BuzatuTeaching
 BuzatuTTbarDilepton
-*.tgz
