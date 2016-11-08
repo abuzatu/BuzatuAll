@@ -73,25 +73,25 @@ do
     ${COMMAND}
     # ... and to make it easier to develop, and suggest improvements to Adrian's code using the forking workflow,
     # set up the upstream to your fork depending on the username for each package of CxAOD
-    COMMAND="echo before"
-    echo "COMAND=${COMMAND}"
-    ${COMMAND}
-    COMMAND="git remote -v"
-    echo "COMAND=${COMMAND}"
-    ${COMMAND}
-    COMMAND="git remote add upstream ssh://git@gitlab.cern.ch:7999/${USER}/${package}.git"
-    echo "COMAND=${COMMAND}"
-    ${COMMAND}
-    COMMAND="echo after"
-    echo "COMAND=${COMMAND}"
-    ${COMMAND}
-    COMMAND="git remote -v"
-    echo "COMAND=${COMMAND}"
-    ${COMMAND}
+    #COMMAND="echo before"
+    #echo "COMAND=${COMMAND}"
+    #${COMMAND}
+    #COMMAND="git remote -v"
+    #echo "COMAND=${COMMAND}"
+    #${COMMAND}
+    #COMMAND="git remote add upstream ssh://git@gitlab.cern.ch:7999/${USER}/${package}.git"
+    #echo "COMAND=${COMMAND}"
+    #${COMMAND}
+    #COMMAND="echo after"
+    #echo "COMAND=${COMMAND}"
+    #${COMMAND}
+    #COMMAND="git remote -v"
+    #echo "COMAND=${COMMAND}"
+    #${COMMAND}
     # ... and return to previous folder
-    COMMAND="cd .."
-    echo "COMAND=${COMMAND}"
-    ${COMMAND}
+    #COMMAND="cd .."
+    #echo "COMAND=${COMMAND}"
+    #${COMMAND}
     # done all for current package
 done < $packages_list
 # done loop over all the packages
