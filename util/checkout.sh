@@ -13,8 +13,8 @@ fi
 # check the number of parameters, if not stop
 if [ $# -ne 2 ]; then
 cat <<EOF
-Usage: $0 packages_file FORCE_CHECKOUT
-Usage: $0 packages.txt  0
+Usage: $0 packages_file        FORCE_CHECKOUT
+Usage: $0 ./util/packages.txt  0
 EOF
 exit 1
 fi
