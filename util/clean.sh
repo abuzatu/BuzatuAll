@@ -1,5 +1,5 @@
 rm -f *~
-rm -f \#*
+rm -f *#*
 rm -f ./util/*~
 rm -f *.tgz
 #for each folder in our package, remove the *~ files
