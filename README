@@ -35,6 +35,10 @@ You can see the latest commits and you can compare between two versions.
 Click on "KRB5", switch to "SSH" and copy in the clipboard the value "ssh://git@gitlab.cern.ch:7999/abuzatu/BuzatuAll.git"
 
 Checkout the package
+for lxplus, you must do first the next two lines
+setupATLAS
+lsetup git
+now start the lines for all platforms
 git clone ssh://git@gitlab.cern.ch:7999/abuzatu/BuzatuAll.git
 ls -lrt
 cd BuzatuAll 
