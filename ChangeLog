@@ -87,4 +87,5 @@ Tag 00-00-24:
 
 Tag 00-00-25:
 	Oct 23, Last tag in SVN, added updates that were at Glasgow
-
+	Nov 08: make checkout to be like in CxAODFramework, only check out the public packages
+	        move all .sh, .txt in util, along with the others

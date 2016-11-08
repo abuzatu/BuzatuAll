@@ -35,8 +35,10 @@ do
     echo "package=${package} type=${type} tag=${tag} path=${path}"
 
     # skip Adrian's personal packages
-    if [[ $type != "public" ]] ; then
-	continue
+    if [[ $USER != "abuzatu" ]] ; then
+	if [[ $type != "public" ]] ; then
+	    continue
+	fi
     fi
 
     # check if the packate is already there and if we really want to check it again
