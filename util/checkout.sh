@@ -89,9 +89,9 @@ do
     #echo "COMAND=${COMMAND}"
     #${COMMAND}
     # ... and return to previous folder
-    #COMMAND="cd .."
-    #echo "COMAND=${COMMAND}"
-    #${COMMAND}
+    COMMAND="cd .."
+    echo "COMAND=${COMMAND}"
+    ${COMMAND}
     # done all for current package
 done < $packages_list
 # done loop over all the packages
