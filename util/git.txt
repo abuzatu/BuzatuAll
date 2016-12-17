@@ -1,1 +1,10 @@
 https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things
+
+
+http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-specific-revision-changeset
+$ git clone $URL
+$ cd $PROJECT_NAME
+$ git reset --hard $SHA1
+
+To again go back to the most recent commit
+$ git pull
