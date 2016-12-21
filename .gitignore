@@ -8,6 +8,7 @@ Vh_object/
 *#*
 *.tgz
 *bk*
+BuzatuPortfolio
 BuzatuATLAS
 BuzatuPython
 BuzatuBash
@@ -22,8 +23,5 @@ BuzatuNoteATLASTemplate
 BuzatuNoteWH
 BuzatuNoteWHAppendix
 BuzatuNoteBJetEnergyCorrectionsRunII
-BuzatuCV
-BuzatuResearch
-BuzatuTeaching
 BuzatuTTbarDilepton
 BuzatuProceedingICHEP2016
