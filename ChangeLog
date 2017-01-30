@@ -17,7 +17,7 @@ o added batch
 Tag 00-00-05:
 o added setup for PYTHONPATH
 o works with BuzatuTree-00-00-15 and BuzatuWH-00-00-05
-o used on 03 Oct to create Event trees that contain all events with no event selection but all info so that we can process it later so that I don't need to store on my computer any more the Paul files
+o used on 03 Oct 2014 to create Event trees that contain all events with no event selection but all info so that we can process it later so that I don't need to store on my computer any more the Paul files
 
 Tag 00-00-06:
 o fixed bug when commiting to a tag version, "tags/" was missing.
@@ -41,51 +41,51 @@ Tag 00-00-12:
 o BuzatuTree of 00-00-20 & BuzatuWH of 00-00-10 on 2014/11/03
 	
 Tag 00-00-13:
-o Nov 11 after readPaul and readEvent replaced by read
+o Nov 11 2014 after readPaul and readEvent replaced by read
 	
 Tag 00-00-14:
 o After replacing pointer with references
 	
 Tag 00-00-15:
 Added new.sh, tar.sh, improved clean.sh to remove *~ fron all folders.
-In the files ran on Dec 19, Dec 20 for the note.
+In the files ran on Dec 19, Dec 20 2014 for the note.
 
 Tag 00-00-16:
-Added NoteWH on Jan 02. Updated BuzatuTree tag to 32, from Dec 28. 
+Added NoteWH on Jan 02 2015. Updated BuzatuTree tag to 32, from Dec 28. 
 
 Tag 00-00-17:
 o Added NoteWHAppendix.
 o Jan 22, holding all the code used in the notes put on CDS on Jan 21.
 
 Tag 00-00-18:
-o Feb 05, before running the update on the study for the update on the note.
+o Feb 05 2015, before running the update on the study for the update on the note.
 
 Tag 00-00-19:
-o Feb 15, to work out of the box for new users.
+o Feb 15 2015, to work out of the box for new users.
 
 Tag 00-00-20:
-o March 30, as per the Hbb talk from April 01.
+o March 30 2015, as per the Hbb talk from April 01.
 
 Tag 00-00-21:
-o March 31, actually the version used on Hbb talk from April 01.
+o March 31 2015, actually the version used on Hbb talk from April 01.
 
 Tag 00-00-22:
-o April 06, actually the version used on Hbb talk from April 06.
+o April 06 2015, actually the version used on Hbb talk from April 06.
 
 Tag 00-00-23
-o 06 Dec, adding new packages under the umbrella of WH: BuzatuATLASUtil, BuzatuBash, BuzatuReadCxAOD. 
-o 06 Dec improved checkout.sh to have a loop so that to add one package, we just have to add one line in a Python-style dictionary.
-o 06 Dec renamed all folders to start with Buzatu
+o 06 Dec 2015, adding new packages under the umbrella of WH: BuzatuATLASUtil, BuzatuBash, BuzatuReadCxAOD. 
+o 06 Dec 2015 improved checkout.sh to have a loop so that to add one package, we just have to add one line in a Python-style dictionary.
+o 06 Dec 2015 renamed all folders to start with Buzatu
 o Updated ./util/tag.sh (renamed from doTag.sh) to pick up automatically what was the previous tag version and add one to that. That will allow to automatically tag all the packages in BuzatuAll.
 o Updated ./util/tar.sh and ./util/tag.sh to pick automatically the name of the package from the current folder, meaning I can use the same for all the packages, so that I can remove the util folder from the other packages. That way I can update just the util from BuzatuAll if I have a change to make.
 o Added packages.sh that keeps the packages and the latest tags from each.
 o This script is included in checkout.sh and removeUtil.sh. That way we maintain it in only one place. We remove the util folders from all packages except BuzatuAll.
 
-
 Tag 00-00-24:
-	Oct 20,last version inSVN, first version in GitLab.
+	Oct 20 2016: last version inSVN, first version in GitLab.
 
 Tag 00-00-25:
-	Oct 23, Last tag in SVN, added updates that were at Glasgow
-	Nov 08: make checkout to be like in CxAODFramework, only check out the public packages
+	Oct 23 2016, Last tag in SVN, added updates that were at Glasgow
+	Nov 08 2016: make checkout to be like in CxAODFramework, only check out the public packages
 	        move all .sh, .txt in util, along with the others
+

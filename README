@@ -70,4 +70,88 @@ Wherever you are, now
 cd $All
 will bring you back to BuzatuAll, from where you can go to any inside package.
 
+********************************************************************************
+***** How to create a flat tree with bjets from CxAOD local or on eos **********
+********************************************************************************
+
+First you have to have checked out the CxAODFramework and compiled it.
+You must also have access to the CxAOD file on the same machine, which can big as big as 4 GB.
+The CxAOD can also be run from /eos
+You may run from your institute if it allows /afs and /eos access to CERN.
+If not, the surest bet is to be on lxplus an check out the package there following the above rules. Then.
+cd ../CxAODFramework_r26-01
+
+Set up RootCore for this package, so that we know the Jet class how to retrieve the info from the CxAOD
+source $All/BuzatuATLAS/CxAODFramework/setup.sh 
+
+Go to our code
+cd $All/BuzatuATLAS/CxAODFramework/createTree 
+ls
+
+We want to process a very recent file for 2-lep AZh->llbb in CxAODTag26-01, copied in Adrian's public space at CERN.
+ls -lh /afs/cern.ch/user/a/abuzatu/data/CxAOD/r26-00/AZh500
+
+We create a new file processes_r26-01.list following the example of processes_r26-00.list.
+You can add new processes in the file, the code will loop over them.
+You can comment out each line, the code will ignore those files.
+
+cp processes_r26-00.list processes_r26-01.list
+emacs -nw processes_r26-01.list
+first argument is the name of the process that we choose, say AZh500llbb
+the second is the location of the folder /afs/cern.ch/user/a/abuzatu/data/CxAOD/r26/AZh500
+it could be on eos, for this we would do in the folder
+eosmount eos
+and the we would put the full path starting with /afs, as it would interpret eos as a local folder
+the third argument is what sort of b-tagging we want, we say btag, as we can also ask for ctag, for VHcc studies
+the fourth argument is if we want to force our jets stored in the CxAOD to have a bParton matched to them, we set to 0, to not reduce statistics, as JetEtMiss group cares only about a TruthWZ, so we force only a TruthWZ to be matched to both jets
+the fifth argument is the tag of the CxAOD, just the first number (26 would be ok for both 26-00 and 26-01) which tells us what PtReco was stored and in what way, so here we have CxAODTag26.
+
+Now we can run.
+./run.sh
+Will give you the options to give, which are self explained: the output folder, which tag (to create the name of the processes file, but also the output folder suffix), on how many events (-1 means all), and if we want to print debug information (if do not want, use 0).
+It's a good practice to store the data separately from the code, so I have my own data folder, in which I have a Tree (for the flat tree), already created, and then I just choose the date (and the folder will be created for me).
+Let's run only on 100 events for now to test it. 
+./run.sh /afs/cern.ch/user/a/abuzatu/data/Tree/161108_1   r26-01    100       0
+Then you can run for full stats
+./run.sh /afs/cern.ch/user/a/abuzatu/data/Tree/161108_1   r26-01    -1        0 >& run_fullstats.log & 
+
+Now you can check your file
+root.exe /afs/cern.ch/user/a/abuzatu/data/Tree/161108_1/tree_AZh500llbb.root
+There is a perjet and a perevent tree.
+Only events with 2jets of 20 GeV, of good quality, b-tagged, and each matched in DR to TruthWZ jet are stored.
+So we can do per-jet pt and per-event mbb response and resolution studies relative to TruthWZ. The corrections stored are
+Nominal (GSC)
+OneMu (muon-in-jet)
+PtReco
+Regression 
+
+********************************************************************************
+***** How to create mbb overlay plots from this flat tree             **********
+********************************************************************************
+
+cd $All/BuzatuVH/createMbb
+emacs -nw createMbb.py
+emacs -nw runCreate.sh
+in the for loop to have overlayHisto.py off and createMbb.py oon.
+change 
+INPUT_FOLDER="161107_3_CxAOD_24_7"
+PROCESSes="ZZ"
+NR_EVENTS=-1
+OPTIONS="inclusive,2hadronic,1hadronic1semileptonic,2semileptonic"
+OUTPUT_FOLDER="161107_3"
+DEBUG="0"
+
+The output will come in ~/data/histos_mbb. Once you have this folder, it will create 161107_3 there automatically.
+To overlay the corrections, edit again 
+emacs -nw runCreate.sh
+In overlayHisto.py you can choose what histograms you want plotted, in what order, with what color, if you want to fit or not, if you want the fit value on the plot or not.
+The plots appear in the same folder.
+To visualize them easily, we create an index.html with then. 
+/afs/cern.ch/user/a/abuzatu/data/histos_mbb/161107_3
+$All/BuzatuBash/make_html.sh .
+You can now make this webpage public to your cern ~/www webpage by copying the folder there. 
+/afs/cern.ch/user/a/abuzatu/www/mbb/ZZ
+In browser put 
+https://abuzatu.web.cern.ch/abuzatu/mbb/ZZ/
+use your $USER instead of abuzatu
 
