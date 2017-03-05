@@ -1,6 +1,8 @@
 git pull origin master
 for FOLDER in Buzatu*; do
-    echo $FOLDER
+    echo "************************************************"
+    echo "****** $FOLDER *************"
+    echo "************************************************"
     cd $FOLDER
     git status
     git fetch
