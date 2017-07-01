@@ -3,6 +3,16 @@ svn propedit svn:ignore .
 taken from:
 http://blog.bogojoker.com/2008/07/command-line-svnignore-a-file/
 
+Pur typical latex, ignore the following:
+*.blg
+*.log
+*.out
+*.run.xml
+*.toc
+*blx.bib
+*.bbl
+*.aux
+
 Command Line to change a file to executable without having to remove it first, for example
 svn propset svn:executable on file.sh
 
