@@ -3,6 +3,9 @@ svn propedit svn:ignore .
 taken from:
 http://blog.bogojoker.com/2008/07/command-line-svnignore-a-file/
 
+Make a file executable:
+svn propset svn:executable on *.sh 
+
 Pur typical latex, ignore the following:
 *.blg
 *.log
