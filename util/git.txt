@@ -8,3 +8,7 @@ $ git reset --hard $SHA1
 
 To again go back to the most recent commit
 $ git pull
+
+From Knut Zoch: for checking differences between releases, first make sure you have the references to the release tags in your local directory (assuming atlas/athena is your ‘upstream’):
+git fetch upstream --tags
+git diff release/21.1.8 release/21.1.9 -- InnerDetector/InDetMonitoring/PixelMonitoring
