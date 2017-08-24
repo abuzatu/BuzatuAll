@@ -1,5 +1,6 @@
 Command Line svn:ignore a file:
-svn propedit svn:ignore .
+svn propedit svn:ignore . [in one folder]
+svn propedit svn:global-ignores . [in all the subfolders recursively of this folder]
 taken from:
 http://blog.bogojoker.com/2008/07/command-line-svnignore-a-file/
 
