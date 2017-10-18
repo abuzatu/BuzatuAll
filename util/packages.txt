@@ -14,4 +14,3 @@ BuzatuNoteBJetEnergyCorrectionsRunII    ignore
 BuzatuProceedingICHEP2016               ignore
 BuzatuTree                              ignore
 BuzatuTTbarDilepton                     ignore
-VqqHinv_internal_note_2017              personal
