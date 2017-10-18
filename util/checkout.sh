@@ -34,6 +34,10 @@ do
     path=$path_prefix/$package.git
     echo "package=${package} type=${type} tag=${tag} path=${path}"
 
+    if [[ $type == "ignore" ]] ; then
+	continue
+    fi
+
     # skip Adrian's personal packages
     if [[ $USER != "abuzatu" ]] ; then
 	if [[ $type != "public" ]] ; then
