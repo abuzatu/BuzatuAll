@@ -16,7 +16,7 @@ export Python="${All}/BuzatuPython"
 #export Tree="${All}/BuzatuTree"
 export VH="${All}/BuzatuVH"
 export LD_LIBRARY_PATH="${Tree}/lib:${LD_LIBRARY_PATH}"
-export PYTHONPATH=${Python}:${WH}/config:${WH}/helper:$PYTHONPATH
+export PYTHONPATH=${Python}:$PYTHONPATH
 test_login_shell=$(shopt | grep login_shell)
 test_login_shell_result=`echo ${test_login_shell} | cut -d" " -f2`
 
