@@ -1,8 +1,8 @@
 BuzatuPortfolio                         personal
 BuzatuATLAS                             public
 BuzatuVH                                public
-BuzatuCPP                               ignore
-BuzatuROOT                              ignore
+BuzatuCPP                               public
+BuzatuROOT                              public
 BuzatuBash                              public
 BuzatuPython                            public
 BuzatuRivetHbbBFatJet                   ignore 
