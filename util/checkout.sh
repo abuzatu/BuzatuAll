@@ -22,7 +22,10 @@ fi
 packages_list=$1
 FORCE_CHECKOUT=$2
 
-path_prefix=ssh://git@gitlab.cern.ch:7999/abuzatu
+# from GitLab at CERN
+# path_prefix="ssh://git@gitlab.cern.ch:7999/abuzatu"
+# copied on 28 May 2019 to GitHub, and asked for GitHub to not be modified any more
+path_prefix="https://github.com/abuzatu"
 
 # start loop over CxAODFramework packages
 while read line
