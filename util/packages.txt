@@ -9,3 +9,4 @@ BuzatuTree                              ignore
 BuzatuTTbarDilepton                     ignore
 BuzatuRivetHbbBJets                     ignore
 BuzatuProceedingICHEP2016               ignore
+BuzatuKeras                             private
