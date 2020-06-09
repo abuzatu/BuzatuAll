@@ -2,11 +2,11 @@ BuzatuBash                              public
 BuzatuPython                            public
 BuzatuCPP                               public
 BuzatuROOT                              ignore
-BuzatuPortfolio                         private
+BuzatuPortfolio                         ignore
 BuzatuATLAS                             ignore
 BuzatuVH                                ignore
 BuzatuTree                              ignore
 BuzatuTTbarDilepton                     ignore
 BuzatuRivetHbbBJets                     ignore
 BuzatuProceedingICHEP2016               ignore
-BuzatuKeras                             private
+BuzatuKeras                             ignore
