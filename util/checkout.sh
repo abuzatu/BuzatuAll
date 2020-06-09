@@ -103,4 +103,4 @@ do
 done < $packages_list
 # done loop over all the packages
 
-echo "Done the checkout of CxAOD package from GitLab!"
+echo "Done the checkout of CxAOD package from GitHub!"
