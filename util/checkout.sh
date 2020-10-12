@@ -25,7 +25,9 @@ FORCE_CHECKOUT=$2
 # from GitLab at CERN
 # path_prefix="ssh://git@gitlab.cern.ch:7999/abuzatu"
 # copied on 28 May 2019 to GitHub, and asked for GitHub to not be modified any more
-path_prefix="https://github.com/abuzatu"
+# path_prefix="https://github.com/abuzatu"
+# GitHub with ssh
+path_prefix="git@github.com:abuzatu"
 
 # start loop over CxAODFramework packages
 while read line
@@ -96,6 +98,13 @@ do
     #echo "COMAND=${COMMAND}"
     #${COMMAND}
     # ... and return to previous folder
+    #
+    if [[ $USER == "abuzatu" ]] ; then
+	COMMAND="../util/update_git_user.sh"
+	echo "COMAND=${COMMAND}"
+	${COMMAND}
+    fi
+    #
     COMMAND="cd .."
     echo "COMAND=${COMMAND}"
     ${COMMAND}
